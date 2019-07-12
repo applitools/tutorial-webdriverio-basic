@@ -4,12 +4,13 @@
   "description": "WebdriverIO Applitools basic example",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha ./test/example-*.js -t 300000"
   },
-  "author": "Raja Rao Dv",
+  "author": "Applitools Team <team@applitools.com> (http://www.applitools.com/)",
   "license": "ISC",
   "devDependencies": {
-    "@applitools/eyes-selenium": "^4.20.3",
-    "@applitools/eyes.webdriverio": "^2.6.0"
+    "@applitools/eyes-selenium": "^4.22.2",
+    "@applitools/eyes.webdriverio": "^2.7.0",
+    "mocha": "^6.1.4"
   }
 }
