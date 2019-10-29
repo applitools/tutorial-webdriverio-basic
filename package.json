@@ -9,8 +9,8 @@
   "author": "Applitools Team <team@applitools.com> (http://www.applitools.com/)",
   "license": "ISC",
   "devDependencies": {
-    "@applitools/eyes-selenium": "^4.22.2",
-    "@applitools/eyes.webdriverio": "^2.7.0",
-    "mocha": "^6.1.4"
+    "@applitools/eyes-selenium": "^4.31.9",
+    "@applitools/eyes.webdriverio": "^2.11.0",
+    "mocha": "^6.2.2"
   }
 }
