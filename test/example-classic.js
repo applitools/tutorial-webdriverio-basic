@@ -36,6 +36,9 @@ describe('wdio', function () {
         // Initialize the eyes configuration
         const configuration = new Configuration();
 
+        // Add this configuration if your tested page includes fixed elements.
+        //config.setStitchMode(StitchMode.CSS);
+
         // You can get your api key from the Applitools dashboard
         configuration.setApiKey('APPLITOOLS_API_KEY')
 
@@ -48,7 +51,9 @@ describe('wdio', function () {
 
     it('Classic Runner Test', async () => {
 
-        // Start the test by setting AUT's name, test name and viewport size (width X height)
+        // Set AUT's name, test name and viewport size (width X height)
+        // We have set it to 800 x 600 to accommodate various screens. Feel free to
+        // change it.
         driver = await eyes.open(driver, 'Demo App', 'Smoke Test', new RectangleSize(800, 600));
 
         // Navigate the browser to the "ACME" demo app.
@@ -57,13 +62,14 @@ describe('wdio', function () {
         // To see visual bugs after the first run, use the commented line below instead.
         // await driver.url("https://demo.applitools.com/index_v2.html");
 
-        // Visual checkpoint #1.
+        // Visual checkpoint #1 - Check the login page. using the fluent API
+        // https://applitools.com/docs/topics/sdk/the-eyes-sdk-check-fluent-api.html?Highlight=fluent%20api
         await eyes.check('Login Window', Target.window().fully());
 
-        // Click the "Log in" button.
+        // This will create a test with two test steps.
         await driver.click('#log-in');
 
-        // Visual checkpoint #2.
+        // Visual checkpoint #2 - Check the app page.
         await eyes.check('App Window', Target.window().fully());
 
         // End the test
@@ -79,8 +85,8 @@ describe('wdio', function () {
 
         // Wait and collect all test results
         const results = await eyes.getRunner().getAllTestResults(false);
+        // Print results
         console.log(results);
-        console.log(results.getAllResults());
     });
 
 });
