@@ -1,4 +1,4 @@
-# Applitools Tutorial - WebdriverIO 4 Ultrafast Grid
+# Applitools Tutorial - WebdriverIO 4
 
 Get started with Applitools visual testing with this example of using the ClassicRunner with the Applitools WebdriverIO 4 SDK.
 
