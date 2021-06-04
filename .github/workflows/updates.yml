@@ -8,16 +8,16 @@ on:
 jobs:
   test:
     container: node:current
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-      strategy:
-        matrix:
+    strategy:
+       matrix:
           node-version: [12.x]
 
-      services:
-        selenium:
-          image: selenium/standalone-chrome
-          options: --health-cmd '/opt/bin/check-grid.sh'
+    services:
+      selenium:
+        image: selenium/standalone-chrome
+        options: --health-cmd '/opt/bin/check-grid.sh'
 
     steps:
       - uses: actions/checkout@v2
