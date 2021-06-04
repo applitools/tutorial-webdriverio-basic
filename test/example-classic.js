@@ -47,7 +47,7 @@ describe('wdio', function () {
     it('Classic Runner Test', async () => {
 
         // Start the test by setting AUT's name, test name and viewport size (width X height)
-        driver = await eyes.open(driver, 'Demo App', 'Smoke Test', new RectangleSize(800, 600));
+        driver = await eyes.open(driver, 'Demo App - WDIO 4', 'Smoke Test', new RectangleSize(800, 600));
 
         // Navigate the browser to the "ACME" demo app.
         await driver.url('https://demo.applitools.com');
