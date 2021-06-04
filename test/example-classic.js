@@ -20,7 +20,8 @@ describe('wdio', function () {
         const chrome = {
             desiredCapabilities: {
                 browserName: 'chrome'
-            }
+            },
+            host: (process.env.CI === 'true') ? 'selenium' : '127.0.0.1'
         };
 
         // Use Chrome browser
