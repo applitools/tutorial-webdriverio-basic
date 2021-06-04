@@ -17,6 +17,7 @@ jobs:
     services:
       selenium:
         image: selenium/standalone-chrome
+        options: --health-cmd '/opt/bin/check-grid.sh'
 
     steps:
       - uses: actions/checkout@v2
