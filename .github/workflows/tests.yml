@@ -8,6 +8,7 @@ on:
 
 jobs:
   test:
+    container: node:current
     runs-on: ubuntu-latest
 
     strategy:
