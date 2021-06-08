@@ -9,7 +9,7 @@
   "author": "Applitools Team <team@applitools.com> (http://www.applitools.com/)",
   "license": "ISC",
   "devDependencies": {
-    "@applitools/eyes.webdriverio": "^2.30.2",
+    "@applitools/eyes.webdriverio": "^2.30.3",
     "mocha": "^6.2.3",
     "webdriverio": "^4.14.4"
   },
