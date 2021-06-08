@@ -47,7 +47,7 @@ describe('wdio', function () {
     it('Classic Runner Test', async () => {
 
         // Start the test by setting AUT's name, test name and viewport size (width X height)
-        driver = await eyes.open(driver, 'Demo App - WDIO 4', 'Smoke Test', new RectangleSize(800, 600));
+        await eyes.open(driver, 'Demo App - WDIO 4', 'Smoke Test', new RectangleSize(800, 600));
 
         // Navigate the browser to the "ACME" demo app.
         await driver.url('https://demo.applitools.com');
@@ -65,7 +65,7 @@ describe('wdio', function () {
         await eyes.check('App Window', Target.window().fully());
 
         // End the test
-        await eyes.closeAsync();
+        eyes.close();
     });
 
     afterEach(async () => {
@@ -73,7 +73,7 @@ describe('wdio', function () {
         await driver.end();
 
         // If the test was aborted before eyes.close was called, ends the test as aborted.
-        await eyes.abortIfNotClosed();
+        await eyes.abort();
 
         // Wait and collect all test results
         const results = await eyes.getRunner().getAllTestResults(false);
